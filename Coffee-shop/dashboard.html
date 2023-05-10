@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="icon" href="./images/dashboard-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +21,10 @@
             </div>
             <ul class="menu-bar">
                 <li>
-                    <a href="#"><i class="fa fa-home"></i>HOME</a>
+                    <a href="./index.html"><i class="fa fa-home"></i>HOME</a>
+                </li>
+                <li class="active">
+                    <a href="#"><i class="fa fa-coffee"></i>MENU</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-receipt"></i>ORDER</a>
@@ -96,7 +100,7 @@
                                 <input type="button" value="Submit" class="my-button add-new-btn" id="submit-btn"
                                     onclick="AddCoffee()">
                                 <input type="button" class="my-button clear-form-btn" value="Clear form"
-                                    onclick="ClearForm()">
+                                    onclick="clearForm()">
                             </form>
                         </div>
 
@@ -121,25 +125,7 @@
                             </tr>
                         </thead>
                         <tbody id="my-table">
-                            <tr>
-                                <td>111</td>
-                                <td>Coffee</td>
-                                <td class="table-img"><img src="./images/ca-phe-sua-da-2.jpg" alt="ca-phe-sua-da-2">
-                                </td>
-                                <td>Lorem, ipsum dolor ipsum.</td>
-                                <td>5</td>
-                                <td>1234</td>
-                                <td>11.22</td>
-                                <td class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Facilis nostrum commodi exercitationem minus accusantium sequi alias adipisci! Illum
-                                    voluptatum odio libero eos.</td>
-                                <td>
-                                    <button class="edit-btn" onclick="EditCoffee(111)"><i
-                                            class="fa fa-edit"></i></button>
-                                    <button class="delete-btn" onclick="DeleteCoffee(111)"><i
-                                            class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -155,6 +141,7 @@
     <script src="./js/Coffee.js"></script>
     <script src="./js/ListCoffee.js"></script>
     <script src="./js/validation.js"></script>
+    <script src="./js/util.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

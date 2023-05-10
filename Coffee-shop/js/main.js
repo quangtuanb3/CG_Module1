@@ -1,3 +1,4 @@
+
 var listCoffee = new ListCoffee();
 var validation = new Validation();
 
@@ -5,17 +6,11 @@ function DOM_ID(id) {
     return document.getElementById(id)
 }
 
-function ClearForm() {
-    if (DOM_ID("coffee-id").disabled != 'true') { DOM_ID("coffee-id").value = ''; }
-    DOM_ID("name").value = '';
-    DOM_ID("image").value = '';
-    DOM_ID("title").value = '';
-    DOM_ID("rate").value = '';
-    DOM_ID("order").value = '';
-    DOM_ID("price").value = '';
-    DOM_ID("description").value = '';
+if (localStorage.getItem("coffeeList") == null) {
+    RenderNewCoffee(listCoffee);
+} else getStorage();
+setStorage()
 
-}
 
 function AddCoffee() {
     // get Input data 
@@ -31,7 +26,7 @@ function AddCoffee() {
     // validation 
     var error = 0;
 
-    console.log(DOM_ID("coffee-id").disabled)
+
     if (validation.CheckEmpty("coffee-id", id) == true) {
         error++;
     } else if ((validation.CheckDuplicateId("coffee-id", listCoffee) == true)) {
@@ -69,15 +64,16 @@ function AddCoffee() {
     }
     var coffee = new Coffee(id, name, image, title, rate, order, price, description)
     listCoffee.AddCoffee(coffee);
-    RenderNewCoffee(listCoffee);
-
+    setStorage();
+    getStorage();
     hideModal();
 
 
 }
 function DeleteCoffee(CfId) {
     listCoffee.DeleteCoffee(CfId);
-    RenderNewCoffee(listCoffee);
+    setStorage();
+    getStorage();
 }
 
 function EditCoffee(id) {
@@ -100,6 +96,8 @@ function EditCoffee(id) {
         DOM_ID("description").value = coffee.description;
 
     }
+    setStorage();
+    getStorage();
 
 }
 function SaveCoffee() {
@@ -115,8 +113,6 @@ function SaveCoffee() {
 
     // validation 
     var error = 0;
-
-    console.log(DOM_ID("coffee-id").disabled)
 
     if (validation.CheckEmpty("name", name) == true) {
         error++;
@@ -147,8 +143,9 @@ function SaveCoffee() {
     }
     var coffee = new Coffee(id, name, image, title, rate, order, price, description)
     listCoffee.EditCoffeeInList(coffee);
-    RenderNewCoffee(listCoffee);
     hideModal()
+    setStorage();
+    getStorage();
 
 }
 
@@ -161,16 +158,18 @@ function RenderNewCoffee(listCoffee) {
 
     for (let i = 0; i < listCoffee.listCf.length; i++) {
         var coffee = listCoffee.listCf[i];
+        var newTitle = truncateString(listCoffee.listCf[i].title, 50)
+        var newDescription = truncateString(listCoffee.listCf[i].description, 50)
         trCoffee += `
         <tr>
           <td>${coffee.id}</td>
           <td>${coffee.name}</td>
-          <td class="table-img"><img src="${image}" alt="${image}"></td>
-          <td>${coffee.title}</td>
+          <td class="table-img"><img src="${coffee.image}" alt="${coffee.image}"></td>
+          <td>${newTitle}</td>
           <td>${coffee.rate}</td>
           <td>${coffee.order}</td>
           <td>${coffee.price}</td>
-          <td>${coffee.description}</td>
+          <td>${newDescription}</td>
           <td>
             <button class="edit-btn" onclick="EditCoffee(${coffee.id})"><i class="fa fa-edit"></i></button>
             <button class="delete-btn" onclick="DeleteCoffee(${coffee.id})" ><i class="fa fa-trash"></i></button>
@@ -178,36 +177,43 @@ function RenderNewCoffee(listCoffee) {
         </tr>`;
     }
     tbody.innerHTML = trCoffee;
-    truncateDescription();
 }
 
 function showModal() {
     DOM_ID("myModal").style.display = 'block';
 }
+
 function hideModal() {
     DOM_ID("myModal").style.display = 'none';
 }
 
-
-
-
-
-
-
-
-
-
-//   truncate 
-
-function truncateDescription() {
-    var descriptionList = document.getElementsByClassName("description")
-    for (var i = 0; i < descriptionList.length; i++) {
-        var text = descriptionList[i].innerHTML;
-        var newText = truncateString(text, 65)
-        descriptionList[i].innerHTML = newText;
-
-    }
+function setStorage() {
+    var jsonCoffeeData = JSON.stringify(listCoffee.listCf);
+    localStorage.setItem("coffeeList", jsonCoffeeData);
 }
+
+function getStorage() {
+    var coffeeData = localStorage.getItem("coffeeList");
+    listCoffee.listCf = JSON.parse(coffeeData);
+    RenderNewCoffee(listCoffee);
+}
+
+
+function clearForm() {
+    console.log(DOM_ID("coffee-id").disabled)
+    if (!DOM_ID("coffee-id").disabled) {
+        DOM_ID("coffee-id").value = '';
+    }
+    DOM_ID("name").value = '';
+    DOM_ID("image").value = '';
+    DOM_ID("title").value = '';
+    DOM_ID("rate").value = '';
+    DOM_ID("order").value = '';
+    DOM_ID("price").value = '';
+    DOM_ID("description").value = '';
+
+}
+
 function truncateString(str, num) {
     if (str.length > num) {
         return str.slice(0, num) + "...";
@@ -215,3 +221,5 @@ function truncateString(str, num) {
         return str;
     }
 }
+
+

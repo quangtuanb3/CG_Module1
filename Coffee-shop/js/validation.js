@@ -14,7 +14,7 @@ function Validation() {
             if (idElement.value == listCoffee.listCf[i].id) {
                 idElement.style.borderColor = "red"
                 return true
-            } 
+            }
             idElement.style.borderColor = "green"
             return false;
         }
@@ -25,7 +25,7 @@ function Validation() {
             if (idElement.value == listCoffee.listCf[i].name) {
                 idElement.style.borderColor = "red"
                 return true
-            } 
+            }
             idElement.style.borderColor = "green"
             return false;
         }
