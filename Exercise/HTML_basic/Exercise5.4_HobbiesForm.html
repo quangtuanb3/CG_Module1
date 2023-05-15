@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies Form</title>
+    <style>
+        form {
+            width: 60%;
+            margin: auto;
+            font-size: 30px;
+            text-align: left;
+            background-color: aquamarine;
+            padding-top: 30px;
+            border-radius: 10px;
+        }
+
+        table {
+
+            border-spacing: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <h1 align="center" style="color: red;">SỞ THÍCH CỦA BẠN</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="name">Họ và tên</label>
+                    </td>
+                    <td>
+                        <input type="text" style="padding: 15px; border-radius: 5px; width: 70%;">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" style="padding: 15px; border-radius: 5px; width: 70%;">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label for="hobbies">Sở thích</label>
+                    </td>
+                    <td style="display: grid; grid-template-columns: repeat(3,1fr);">
+                        <div>
+                            <input type="checkbox" id="sport">
+                            <label for="sport">Thể thao</label>
+
+                        </div>
+                        <div>
+                            <input type="checkbox" id="music">
+                            <label for="music">Âm nhạc</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="reading">
+                            <label for="reading">Đọc sách </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="web-suffing">
+                            <label for="web-suffing">Lướt web</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="gaming">
+                            <label for="gaming">Chơi game</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="film">
+                            <label for="film">Điện ảnh</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="travel">
+                            <label for="travel">Du lịch</label>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Gửi thông tin"
+                            style="padding: 15px 20px; border-radius: 3px; width: 170px; font-size: 20px;">
+                        <input type="reset" value="Nhập lại"
+                            style="padding: 15px 20px; border-radius: 3px; width: 170px; font-size: 20px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>
