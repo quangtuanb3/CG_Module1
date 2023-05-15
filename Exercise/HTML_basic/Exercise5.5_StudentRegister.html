@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Register</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            font-size: 24px;
+            color: #0a16ff;
+        }
+
+        #form-container {
+            width: 50%;
+            margin: auto;
+            background-color: rgb(248, 248, 129);
+        }
+
+        form {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form-container">
+        <form action="#">
+            <h1 style="background-color: rgb(170, 250, 213); color: #0a16ff;">Đăng ký học viên</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <label for="name">Họ và tên</label></td>
+                        <td><input type="text" id="name" name="name"> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="birthday">Ngày sinh</label>
+                        </td>
+                        <td>
+                            <input type="date" id="birthday" name="birthday">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="gender">Giới tính</label>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="radio">
+                                <label for="gender">Nam</label>
+
+                                <input type="radio">
+                                <label for="gender">Nữ</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="adress">Địa chỉ</label>
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="7"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="grade">Lớp</label>
+                        </td>
+                        <td>
+                            <select name="grade" id="grade">
+                                <option value="0">-- Chọn lớp --</option>
+                                <option value="10">Lớp 10</option>
+                                <option value="11">Lớp 11</option>
+                                <option value="12">Lớp 12</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>
+                            <input type="email" id="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone">Điện thoại</label>
+                        </td>
+                        <td>
+                            <input type="number" id="phone">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="padding: 20px;">
+                            <input type="submit" value="Đăng ký">
+                            <input type="reset" value="Nhập lại">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
