@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Msg</title>
+</head>
+
+<body>
+    <button onclick="showMsgAlert()">Click me to show alert</button>
+    <button onclick="showMsgInTag()">Click me to show text in tag</button>
+    <button onclick="showMsgByWriting()">Click me to write text</button>
+    <button onclick="showMsgInConsole()">Click me to show text in console.log</button>
+    <p id="content"></p>
+
+    <script>
+        function showMsgAlert() {
+            alert('Xin chào');
+        }
+        function showMsgInTag() {
+            document.getElementById('content').innerText = 'Xin chào'
+        }
+        function showMsgByWriting() {
+            document.write('Xin chào')
+        }
+        function showMsgInConsole() {
+            console.log('Xin chào')
+        }
+
+    </script>
+
+</body>
+
+</html>
