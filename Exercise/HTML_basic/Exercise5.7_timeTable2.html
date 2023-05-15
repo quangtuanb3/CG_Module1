@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable2</title>
+    <style>
+        #container {
+            width: 50%;
+            margin: auto;
+        }
+
+        #table1 {
+            width: 90%;
+            margin: auto;
+        }
+
+        #table1 td:nth-child(even) {
+            text-align: right;
+
+        }
+
+        #table2 {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #table2 td {
+            border: 1px solid #000000;
+            text-align: center;
+            padding: 8px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center; color: blue;">THỜI KHÓA BIỂU</h1>
+        <table id="table1" style="color: blue;">
+            <tbody>
+                <tr>
+                    <td>
+                        Lớp: C0423i1
+                    </td>
+                    <td>
+                        Thời gian học: 13h30 - 17h30
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Giáo viên: KhoaNV
+                    </td>
+                    <td>
+                        Ngày học: thứ 3, 5, 7
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phòng học: Class 3/ Lab 3
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table id="table2">
+            <tbody>
+                <tr>
+                    <td colspan="3"> </td>
+                    <td style="background-color: yellow; font-weight: bold;">Thứ 3</td>
+                    <td style="background-color: yellow;  font-weight: bold;">Thứ 5</td>
+                    <td style="background-color: yellow;  font-weight: bold;">Thứ 7</td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(255, 179, 0);  font-weight: bold;">Tuần</td>
+                    <td style="background-color: rgb(255, 179, 0);  font-weight: bold;">Ngày bắt đầu</td>
+                    <td style="background-color: rgb(255, 179, 0);  font-weight: bold;">Ngày kết thúc</td>
+                    <td colspan="3" style="background-color: rgb(255, 179, 0);  font-weight: bold;">Môn học</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>01/09/2019</td>
+                    <td>05/09/2019</td>
+                    <td>C1 - T1, L1</td>
+                    <td>CF - T2, L2</td>
+                    <td>CF - T3, L3</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>08/09/2019</td>
+                    <td>12/09/2019</td>
+                    <td>C1 - T1, L1</td>
+                    <td>CF - Written Test</td>
+                    <td>CF - T3, L3</td>
+                </tr>
+                <tr>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
