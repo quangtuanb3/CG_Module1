@@ -1,0 +1,20 @@
+Dear anh Khoa, anh Cử, anh Quang, anh Minh, anh Vinh và chị Thư,
+Sau đây em xin báo cáo tình hình học tập tuần vừa qua và phương hướng học tập trong tuần thứ 2 của Module 1 như sau:
+1. Những việc đã làm trong tuần:
+- Học theo chương trình: Flowchart, HTML, Git, Table, Form.
+- Làm bài tập trên James và bài tập giáo viên giao.
+- Thực hiện CaseStudy: Code UI, chức năng trang Dashboard, trang Shop.
+2. Những công việc đang làm
+- CaseStudy: Hoàn thiện các chức năng mua sản phẩm trên trang shop.
+3. Khó khăn trong quá trình học tập:
+- Không
+4. Những đề xuất, kiến nghị:
+- Không
+5. Phương hướng học tập tuần tới:
+- Học theo chương trình tại james.codegym.vn
+- Làm bài tập theo chương trình học và theo yêu cầu giáo viên.
+- Tiếp tục thực hiện CaseStudy
+--
+Họ và tên: Bùi Quang Tuấn
+SDT: 078.868.9492
+Email: quangtuanb3@gmail.com
