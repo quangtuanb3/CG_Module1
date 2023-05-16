@@ -30,6 +30,7 @@
     width: 100%;
     justify-content: space-between;
     background-color: #393838;
+    line-height: 35px;
 }
 .branch-logo {
     height: 70px;
@@ -57,12 +58,43 @@
 
 .cart-icon {
     padding: 1px 10px;
+    cursor: pointer;
+}
+.cart-icon i {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #c47113;
+    text-align: center;
+    line-height: 42px;
+    background-color: white;
+    color: orange;
+}
+.cart-icon i:hover {
+    color: white;
+    background-color: orange;
+    transition: all 0.5s;
 }
 
 .cart {
-    padding: 30px;
+    position: relative;
+    padding: 25px;
     font-size: 20px;
     color: #fac760;
+}
+#cart-number {
+    background-color: white;
+    border: 1px solid green;
+    width: 14px;
+    color: #60de55;
+    height: 14px;
+    position: absolute;
+    left: 35%;
+    top: 25%;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 14px;
 }
 .currency {
     padding: 0 10px;
@@ -182,6 +214,11 @@
 }
 .pro-start i {
     color: rgb(238, 214, 56);
+}
+.old-price {
+    text-decoration-line: line-through;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 .pro-price {
     font-weight: bold;
@@ -414,10 +451,16 @@ input:focus {
     padding: 15px;
     font-size: 15px;
 }
-#my-modal {
+#modal-container{
     display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 223, 223, 0.493);
+
+}
+#my-modal {
     position: fixed;
-    z-index: 100;
+    z-index: 1001;
     padding: 10px 30px;
     left: 07%;
     top: 30px;
@@ -460,7 +503,14 @@ input:focus {
 }
 .modal-cf-content h3,
 .modal-cf-content h4 {
-    padding: 10px 0;
+    padding: 8px 0;
+}
+.modal-cf-content .coffee-name {
+    font-size: 20px;
+}
+.modal-cf-content .coffee-price {
+    color: #d7084d;
+    font-size: 18px;
 }
 .radio-option {
     display: none;
@@ -476,7 +526,6 @@ input:focus {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding: 0 15px;
 }
 
 .buy-coffee-form .active {
@@ -500,4 +549,147 @@ input:focus {
 .buy-coffee-form .add-to-cart-btn:hover {
     background-color: #22b382;
     color: #ffffff;
+}
+.total {
+    padding-top: 40px;
+    font-size: 20px;
+    color: #d7084d;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.table-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+#cart-table {
+    position: fixed;
+    z-index: 100;
+    padding: 30px;
+    left: 07%;
+    top: 70px;
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(169, 166, 166);
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.95;
+}
+table,
+th,
+td {
+    border: 1px solid rgb(178, 178, 178);
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+#cart-table table {
+    border-radius: 7px;
+    margin: auto;
+}
+#cart-table .radio-btn {
+    margin: 5px;
+    padding: 7px;
+}
+#table-container {
+    display: none;
+}
+#cart-table .close {
+    margin-top: -20px;
+}
+#cart-table .active {
+    background-color: rgb(65, 65, 131);
+    color: white;
+}
+#cart-table .delete-btn {
+    color: red;
+}
+.total-cart {
+    text-align: right;
+    color: red;
+    font-size: 17px;
+    letter-spacing: 3px;
+    padding-top: 15px;
+}
+.topping-btn {
+    font-size: 12px;
+    margin: 5px;
+    padding: 5px 5px;
+}
+.send-order {
+    width: 20%;
+    margin: auto;
+}
+#send-order-btn {
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: -5px 3px 4px 0px #8ef983;
+}
+#send-order-btn:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+}
+#confirm-order {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding: 10px 30px;
+    left: 07%;
+    top: 30px;
+    width: 80%;
+    margin: auto;
+    /* color: w; */
+    border: 1px solid rgb(169, 166, 166);
+    border-radius: 10px;
+    background: linear-gradient(65deg, #ffffff, #d5d5d5);
+    opacity: 0.95;
+}
+#close-confirmModal{
+    margin-top: -20px;
+}
+#cart-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1001;
+    display: none;
+    background-color: #88888830;
+}
+
+#buy-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1001;
+    display: none;
+    background-color: #88888830;
+}
+
+/* #confirm-order-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+} */
+
+#errorInfo{
+    text-align: center;
+    color:red;
+    display: none;
 }

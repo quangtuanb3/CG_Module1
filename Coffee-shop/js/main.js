@@ -25,7 +25,8 @@ function AddCoffee() {
 
     // validation 
     var error = 0;
-
+    
+    image = validation.CheckToSetDefaultImg(image);
 
     if (validation.CheckEmpty("coffee-id", id) == true) {
         error++;
@@ -66,9 +67,17 @@ function AddCoffee() {
     listCoffee.AddCoffee(coffee);
     setStorage();
     getStorage();
-    hideModal();
+    closeModal();
 
 
+}
+function confirmDeleteCoffee(CfId) {
+    if (confirm("Are you sure you want to delete?")) {
+        DeleteCoffee(CfId)
+        alert("Item deleted successfully!");
+    } else {
+        alert("Delete cancelled.");
+    }
 }
 function DeleteCoffee(CfId) {
     listCoffee.DeleteCoffee(CfId);
@@ -79,7 +88,7 @@ function DeleteCoffee(CfId) {
 function EditCoffee(id) {
     let coffee = listCoffee.FindById(id)
     if (coffee != null) {
-        showModal();
+        openModal();
         let btn = DOM_ID("submit-btn")
         btn.value = "Save";
         btn.removeAttribute("onclick");
@@ -143,7 +152,7 @@ function SaveCoffee() {
     }
     var coffee = new Coffee(id, name, image, title, rate, order, price, description)
     listCoffee.EditCoffeeInList(coffee);
-    hideModal()
+    closeModal()
     setStorage();
     getStorage();
 
@@ -172,18 +181,18 @@ function RenderNewCoffee(listCoffee) {
           <td>${newDescription}</td>
           <td>
             <button class="edit-btn" onclick="EditCoffee(${coffee.id})"><i class="fa fa-edit"></i></button>
-            <button class="delete-btn" onclick="DeleteCoffee(${coffee.id})" ><i class="fa fa-trash"></i></button>
+            <button class="delete-btn" onclick="confirmDeleteCoffee(${coffee.id})" ><i class="fa fa-trash"></i></button>
           </td>
         </tr>`;
     }
     tbody.innerHTML = trCoffee;
 }
 
-function showModal() {
+function openModal() {
     DOM_ID("myModal").style.display = 'block';
 }
 
-function hideModal() {
+function closeModal() {
     DOM_ID("myModal").style.display = 'none';
 }
 
