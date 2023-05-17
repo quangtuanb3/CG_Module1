@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency exchange</title>
+    <style>
+        label {
+            display: block;
+            width: 150px;
+        }
+
+        select {
+            width: 170px;
+        }
+
+        div>div {
+            display: flex;
+            padding: 10px;
+        }
+
+        .container {
+            width: 30%;
+            margin: auto;
+            background-color: rgb(219, 254, 219);
+            border: 1px solid greenyellow;
+            border-radius: 6px;
+        }
+
+        button {
+            height: 40px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: rgb(185, 45, 232);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition: all 0.5s;
+        }
+
+        button:focus {
+            transform: scale(1);
+            transition: all 0.2s;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exchange Money</h1>
+        <div>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount">
+        </div>
+        <div>
+            <label for="fromCurrency">From Currency</label>
+            <select name="fromCurrency" id="fromCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </div>
+        <div>
+            <label for="toCurrency">To Currency</label>
+            <select name="toCurrency" id="toCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </div>
+        <div style="justify-content: space-between;">
+            <button id="convert">Convert</button>
+            <p id="result"></p>
+        </div>
+
+    </div>
+
+    <script src="./js.js"></script>
+</body>
+
+</html>
