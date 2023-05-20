@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+
+<body>
+    <p>
+        What is the official name of Javascript?
+    </p>
+    <br>
+    <input type="text" id="answer" placeholder="Enter your answer...">
+    <br>
+    <br>
+    <button id="checkAnswer">Check</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            let answer = document.getElementById("answer").value;
+            if (answer == 'ECMAScript') {
+                document.getElementById("result").innerText = 'Right!'
+            } else document.getElementById("result").innerText = "Didn't know? ECMAScript"
+        }
+        document.getElementById("checkAnswer").addEventListener("click", checkAnswer);
+    </script>
+</body>
+
+</html>
