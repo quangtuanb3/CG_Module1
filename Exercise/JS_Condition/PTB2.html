@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTB2</title>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Input a</td>
+                <td><input type="number" id="numberA"></td>
+            </tr>
+            <tr>
+                <td>Input b</td>
+                <td><input type="number" id="numberB"></td>
+            </tr>
+            <tr>
+                <td>Input c</td>
+                <td><input type="number" id="numberC" onchange="getX()"></td>
+            </tr>
+            <tr>
+                <td><button onclick="getX()">Calculate</button></td>
+
+            </tr>
+            <tr>
+                <td>X1= </td>
+                <td id="x1"></td>
+            </tr>
+            <tr>
+                <td>X2= </td>
+                <td id="x2"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function getX() {
+            let a = Number(document.getElementById("numberA").value);
+            let b = Number(document.getElementById("numberB").value);
+            let c = Number(document.getElementById("numberC").value);
+            let delta = b ** 2 - 4 * a * c;
+            let x1, x2;
+            if (delta >= 0) {
+                if (delta === 0) {
+                    x1 = -b / (2 * a);
+                    x2 = x1;
+                } else {
+                    x1 = (-b + Math.sqrt(delta)) / 2;
+                    x2 = (-b - Math.sqrt(delta)) / 2;
+                }
+            } else {
+                alert('Phương trình vô nghiệm');
+            }
+
+            document.getElementById('x1').innerText = x1;
+            document.getElementById('x2').innerText = x2;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
