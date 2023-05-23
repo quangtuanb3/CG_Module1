@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            /* border-radius: 4px; */
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    <input type="text" style="padding: 10px;" id="screen">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="1" value="1" onclick='printScreen(this.value)'>1</button>
+                </td>
+                <td>
+                    <button id="2" value="2" onclick='printScreen(this.value)'>2</button>
+                </td>
+                <td>
+                    <button id="3" value="3" onclick='printScreen(this.value)'>3</button>
+                </td>
+                <td>
+                    <button id="add" value="+" onclick='printScreen(this.value)'>+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="4" value="4" onclick='printScreen(this.value)'>4</button>
+                </td>
+                <td>
+                    <button id="5" value="5" onclick='printScreen(this.value)'>5</button>
+                </td>
+                <td>
+                    <button id="6" value="6" onclick='printScreen(this.value)'>6</button>
+                </td>
+                <td>
+                    <button id="sub" value="-" onclick='printScreen(this.value)'>-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="7" value="7" onclick='printScreen(this.value)'>7</button>
+                </td>
+                <td>
+                    <button id="8" value="8" onclick='printScreen(this.value)'>8</button>
+                </td>
+                <td>
+                    <button id="9" value="9" onclick='printScreen(this.value)'>9</button>
+                </td>
+                <td>
+                    <button id="mul" value="x" onclick='printScreen(this.value)'>x</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="cls" onclick="clearScreen()">C</button>
+                </td>
+                <td>
+                    <button id="0" value="0" onclick='printScreen(this.value)'>0</button>
+                </td>
+                <td>
+                    <button id="equal" value="=" onclick="getResult()">=</button>
+                </td>
+                <td>
+                    <button id="div" value="/" onclick='printScreen(this.value)'>/</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script src="./js.js"></script>
+</body>
+
+</html>
