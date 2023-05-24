@@ -12,10 +12,12 @@ function checkCondition(id) {
             if (fastEle.checked && goodEle.checked) {
                 goodEle.checked = false;
             }
+            break;
         case 'fast':
             if (goodEle.checked && cheapEle.checked) {
                 cheapEle.checked = false;
             }
+            break;
     }
 
 }
