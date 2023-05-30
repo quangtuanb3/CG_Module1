@@ -37,7 +37,6 @@ function displayArray(arr) {
 }
 
 function reverseArray(arr) {
-    console.log(Math.floor(arr.length / 2))
     let temp;
     for (let i = 0; i < Math.floor(arr.length / 2); i++) {
         temp = arr[i];
